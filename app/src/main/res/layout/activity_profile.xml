@@ -56,6 +56,7 @@
                         android:paddingTop="30dp">
 
                         <TextView
+                            android:id="@+id/textview_user_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -185,6 +186,7 @@
             </GridLayout>
 
             <Button
+                android:id="@+id/btn_signout"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
