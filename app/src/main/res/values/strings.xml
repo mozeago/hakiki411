@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Hakiki411</string>
+    <string name="landing_screen_text_first">A Gamified Approach to</string>
+    <string name="landing_screen_text_second">Media Literacy</string>
+    <string name="text_login">Login</string>
+
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- ... -->
+    <string name="facebook_application_id" translatable="false">243932510339021</string>
+    <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->
+    <string name="facebook_login_protocol_scheme" translatable="false">fb243932510339021</string>
+    <string name="title_activity_splash">SplashActivity</string>
+</resources>

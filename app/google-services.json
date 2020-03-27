@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "595252693884",
+    "firebase_url": "https://hakiki411-38f33.firebaseio.com",
+    "project_id": "hakiki411-38f33",
+    "storage_bucket": "hakiki411-38f33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595252693884:android:e83a8f74a1d1db263a32f9",
+        "android_client_info": {
+          "package_name": "com.mosesasiago.hakiki111"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595252693884-lm4s05j6av2c56ig22flj0lp11f878uf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mosesasiago.hakiki111",
+            "certificate_hash": "e34f12da2f0b885c9659a0836b7d05cac6dd2df9"
+          }
+        },
+        {
+          "client_id": "595252693884-pnee70pbtsppbuo0g75kmkfsb0t14tju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbaRXgz9vVyV34uuF7svBGKjt5WpNpgb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595252693884-pnee70pbtsppbuo0g75kmkfsb0t14tju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
