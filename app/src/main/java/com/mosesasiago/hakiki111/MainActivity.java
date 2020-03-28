@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Button register, login;
     ImageView imageView;
     FirebaseAuth auth;
+    FirebaseUser user;
     FirebaseUserMetadata metadata;
     // Choose an arbitrary request code value
     private static final int RC_SIGN_IN = 254;
@@ -45,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
                                     new AuthUI.IdpConfig.FacebookBuilder().build(),
                                     new AuthUI.IdpConfig.PhoneBuilder().build(),
                                     new AuthUI.IdpConfig.AnonymousBuilder().build()))
+                            .setTheme(R.style.FullscreenTheme)
                             .build(),
                     RC_SIGN_IN);
         }
         //setContentView(R.layout.activity_main);
-        imageView = (ImageView) findViewById(R.id.ic_user);
+//        imageView = (ImageView) findViewById(R.id.ic_user);
 //        imageView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -67,26 +69,25 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
         if (requestCode == RC_SIGN_IN) {
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            user = FirebaseAuth.getInstance().getCurrentUser();
             IdpResponse response = IdpResponse.fromResultIntent(data);
             // Successfully signed in
             if (resultCode == RESULT_OK) {
                 if (user != null) {
+                    launchProfile();
                     Toast.makeText(this, " Login successfully" + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                 }
                 metadata = auth.getCurrentUser().getMetadata();
                 if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
                     // The user is new, show them a fancy intro screen!
+                    launchProfile();
                     Toast.makeText(this, " New User !" + user.getDisplayName(), Toast.LENGTH_SHORT).show();
 
                 } else {
+                    launchProfile();
                     // This is an existing user, show them a welcome back screen.
                     Toast.makeText(this, " Welcome back " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                 }
-                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                startActivity(new Intent(this, ProfileActivity.class)
-                        .putExtra("user_name", user.getDisplayName()));
-                finish();
             } else {
                 // Sign in failed
                 if (response == null) {
@@ -100,5 +101,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+    public void launchProfile(){
+        startActivity(new Intent(this, ProfileActivity.class)
+                .putExtra("user_name", user.getDisplayName()));
+        finish();
     }
 }

@@ -38,6 +38,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/user_profile_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -46,6 +47,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/user_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -53,6 +55,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/user_skill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -61,6 +64,7 @@
         </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_picture"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
@@ -163,13 +167,15 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <ImageView
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_share"
+                                android:drawablePadding="5dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
                                 android:onClick="openGameSummary"
-                                android:src="@drawable/ic_share" />
+                                android:text="share" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -177,59 +183,31 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:layout_weight="1"
+                                android:drawableLeft="@drawable/ic_like"
+                                android:drawablePadding="5dp"
                                 android:onClick="openGameSummary"
-                                android:text="share" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:onClick="openGameSummary"
-                                android:src="@drawable/ic_like" />
+                                android:text="like" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
+                                android:drawableLeft="@drawable/ic_factcheck"
+                                android:drawablePadding="5dp"
                                 android:layout_weight="1"
                                 android:onClick="openGameSummary"
-                                android:text="share" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:onClick="openGameSummary"
-                                android:src="@drawable/ic_factcheck" />
-
+                                android:text="fact check" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
+                                android:drawableLeft="@drawable/ic_hint"
+                                android:drawablePadding="5dp"
                                 android:layout_weight="1"
                                 android:onClick="openGameSummary"
-                                android:text="share" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:onClick="openGameSummary"
-                                android:src="@drawable/ic_hint" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:layout_weight="1"
-                                android:onClick="openGameSummary"
-                                android:text="share" />
+                                android:text="hint" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

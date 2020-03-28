@@ -13,11 +13,13 @@ import android.widget.TextView;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ProfileActivity extends AppCompatActivity {
     Button playGame, leaderBoard, howToPlay, rateOurApp, signout;
     TextView name;
-
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,9 @@ public class ProfileActivity extends AppCompatActivity {
         if (bundle != null) {
             String user_name = (String) bundle.get("user_name");
             name.setText(user_name);
+        }else{
+            user = FirebaseAuth.getInstance().getCurrentUser();
+            name.setText(user.getDisplayName());
         }
         playGame.setOnClickListener(new View.OnClickListener() {
             @Override
