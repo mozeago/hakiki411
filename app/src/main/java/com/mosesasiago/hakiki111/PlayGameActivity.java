@@ -21,6 +21,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import com.mosesasiago.hakiki111.models.News;
+import com.mosesasiago.hakiki111.interfaces.NewsJsonAPi;
+import com.mosesasiago.hakiki111.config.Config;
+
+import java.util.List;
 
 public class PlayGameActivity extends AppCompatActivity {
     ImageView back_button;
@@ -28,6 +39,7 @@ public class PlayGameActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference dbRef;
     FirebaseUser user;
+    TextView newsholder;
 
     @Override
 
@@ -43,6 +55,38 @@ public class PlayGameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
+            }
+        });
+        newsholder = (TextView) findViewById(R.id.newsholder);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Config.API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        NewsJsonAPi newsJsonAPi = retrofit.create(NewsJsonAPi.class);
+        Call<List<News>> news = newsJsonAPi.getNews();
+        news.enqueue(new Callback<List<News>>() {
+            @Override
+            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                if (!response.isSuccessful()) {
+                    newsholder.setText("error code -> " + response.code());
+                    return;
+                }
+                List<News> news1 = response.body();
+                for (News news2 : news1) {
+                    String news = "";
+                    news += "ID: " + news2.getId();
+                    news += "\nTitle: " + news2.getTitle();
+                    news += "\nSummary: " + news2.getSummary();
+                    news += "\nImageURL: " + news2.getImageUrl();
+                    news += "\nsourceURL: " + news2.getSourceUrl();
+                    news += "\nPoints: " + news2.getPoints()+"\n";
+                    newsholder.append(news);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<News>> call, Throwable t) {
+                newsholder.setText(t.getMessage());
             }
         });
     }

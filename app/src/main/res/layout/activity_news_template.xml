@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f5f5"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        app:cardCornerRadius="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <!-- Media -->
+            <ImageView
+                app:srcCompat="@drawable/person_avartar"
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cameroon rebels declare coronavirus ceasefire"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="The Southern Cameroons Defence Forces (Socadef) said its ceasefire would come into effect from Sunday as a gesture of goodwill.It is so far the only armed group among many operating in Cameroon's English-speaking regions to have heeded the UN's call for a global ceasefire."
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/browser_actions_text_color"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:padding="5dp"
+                        android:text="2456"
+                        android:textAlignment="viewEnd"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/browser_actions_text_color"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:text="people liked or shared"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/browser_actions_text_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_share"
+                        android:drawablePadding="5dp"
+                        android:onClick="openGameSummary"
+                        android:text="share"
+                        android:textColor="@color/browser_actions_text_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_like"
+                        android:drawablePadding="5dp"
+                        android:onClick="openGameSummary"
+                        android:text="like"
+                        android:textColor="@color/browser_actions_text_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_factcheck"
+                        android:drawablePadding="5dp"
+                        android:onClick="openGameSummary"
+                        android:text="fact check"
+                        android:textColor="@color/browser_actions_text_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_hint"
+                        android:drawablePadding="5dp"
+                        android:onClick="openGameSummary"
+                        android:text="hint"
+                        android:textColor="@color/browser_actions_text_color" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
